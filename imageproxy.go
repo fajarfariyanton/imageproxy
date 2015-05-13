@@ -181,7 +181,12 @@ func validHost(hosts []string, u *url.URL) bool {
 
 // validSignature returns whether the request signature is valid.
 func validSignature(key []byte, r *Request) bool {
-	got, err := base64.URLEncoding.DecodeString(r.Options.Signature)
+	sig := r.Options.Signature
+	if m := len(sig) % 4; m != 0 { // add padding if missing
+		sig += strings.Repeat("=", 4-m)
+	}
+
+	got, err := base64.URLEncoding.DecodeString(sig)
 	if err != nil {
 		glog.Errorf("error base64 decoding signature %q", r.Options.Signature)
 		return false

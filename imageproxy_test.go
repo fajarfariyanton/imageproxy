@@ -98,6 +98,7 @@ func TestValidSignature(t *testing.T) {
 		valid   bool
 	}{
 		{"http://test/image", Options{Signature: "NDx5zZHx7QfE8E-ijowRreq6CJJBZjwiRfOVk_mkfQQ="}, true},
+		{"http://test/image", Options{Signature: "NDx5zZHx7QfE8E-ijowRreq6CJJBZjwiRfOVk_mkfQQ"}, true},
 		{"http://test/image", emptyOptions, false},
 	}
 
