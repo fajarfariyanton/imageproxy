@@ -177,6 +177,9 @@ Reload the [codercat URL][], and you should see an error message.  Now load a
 
 [signed codercat URL]: http://localhost:8080/500,sXyMwWKIC5JPCtlYOQ2f4yMBTqpjtUsfI67Sp7huXIYY=/https://octodex.github.com/images/codercat.jpg
 
+Some simple code samples for generating signatures in various languages can be
+found starting in [this comment](https://github.com/willnorris/imageproxy/issues/11#issuecomment-101428470).
+
 If both a whiltelist and signatureKey are specified, requests can match either.
 In other words, requests that match one of the whitelisted hosts don't
 necessarily need to be signed, though they can be.
